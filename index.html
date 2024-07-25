@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sistem Manajemen Pengguna Layanan Statistik (SIMPELANTIK) BPS Kabupaten Bulungan</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/bps.png" rel="icon">
+  <link href="assets/img/bps.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <!-- =======================================================
+  * Template Name: QuickStart
+  * Template URL: https://bootstrapmade.com/quickstart-bootstrap-startup-website-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logos.png" alt="">
+        <h1 class="sitename">SIMPELANTIK</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="active">Beranda</a></li>
+          <li><a href="index.html#services">Layanan Kami</a></li>
+          <li><a href="index.html#featured-services">Pengaduan</a></li>
+          <!-- <li><a href="index.html#pricing">Maklumat Pelayanan</a></li> -->
+          <li><a href="index.html#testimonials">Standar Pelayanan</a></li>
+          <li><a href="index.html#contact">Hubungi Kami</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#" onclick="showBukuTamu(event)">Buku Tamu</a>
+      <script>
+        function showBukuTamu(event) {
+          event.preventDefault(); // Prevent the default link behavior
+
+          Swal.fire({
+            title: 'Apakah Anda pengunjung langsung Pelayanan Statistik Terpadu (PST) BPS Kabupaten Bulungan?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Iya',
+            cancelButtonText: 'Tidak'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: 'Apakah Anda telah mengisi buku tamu PST?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Sudah',
+                cancelButtonText: 'Belum'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: 'Selamat menikmati berbagai layanan kami!',
+                    icon: 'success'
+                  }).then(() => {
+                    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+                  });
+                } else {
+                  window.open("https://afn-latsar3ix.github.io/Buku-Tamu-PST-BPS-Kabupaten-Bulungan/", "_blank");
+                }
+              });
+            } else {
+              Swal.fire({
+                title: 'Silakan datang ke kantor BPS Kabupaten Bulungan untuk mendapatkan layanan-layanan offline kami.',
+                icon: 'info'
+              });
+            }
+          });
+        }
+      </script>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="hero-bg">
+        <img src="assets/img/hero-bg-light.webp" alt="">
+      </div>
+      <div class="container text-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <h1 data-aos="fade-up">Selamat datang di <span>SIMPELANTIK</span></h1>
+          <p data-aos="fade-up" data-aos-delay="100">Pelayanan Statistik Terpadu (PST) BPS Kabupaten Bulungan<br></p>
+          <p data-aos="fade-up" data-aos-delay="100">Jam Layanan <em>Offline</em>:<br> Senin - Kamis : 08.00 - 15.30
+            WITA<br>Jumat : 08.00 - 16.00 WITA</p>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://drive.google.com/file/d/1lNNdF0KQ3XgkkbE7_6XoP8cUzPw3355N/view?usp=drive_link" target="_blank"
+              class="btn-get-started">Panduan Penggunaan</a>
+            <a href="https://youtu.be/vv5csdFce-0"
+              class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Tonton
+                Video</span></a>
+          </div>
+          <img src="assets/img/hero-services-img.webp" class="img-fluid hero-img" alt="" data-aos="zoom-out"
+            data-aos-delay="300">
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/berakhlak.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/bangga.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/buatan.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/berakhlak.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/bangga.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/buatan.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+        </div>
+      </div>
+    </section><!-- /Clients Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>LAYANAN KAMI</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row g-5">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <!-- <img src="assets\img\web.png" alt="Logo BPS" class="icon"> -->
+              <i class="bi bi-globe icon"></i>
+              <div>
+                <h3><em>Website</em> BPS Kabupaten Bulungan</h3>
+                <p>Portal resmi BPS Kabupaten Bulungan yang menyediakan berbagai informasi statistik, publikasi, dan
+                  layanan data yang dapat diakses secara <em>online</em>. <em>Website</em> ini menjadi sumber utama
+                  informasi mengenai
+                  statistik di Kabupaten Bulungan.</p>
+                <a href="https://bulungankab.bps.go.id/" class="read-more stretched-link" target="_blank">Dapatkan
+                  Layanan Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-teal position-relative">
+              <!-- <img src="assets\img\whatsapp.png" alt="Logo WhatsApp" class="icon"> -->
+              <i class="bi bi-whatsapp icon"></i>
+              <div>
+                <h3>Layanan Integrasi Statistik dan Angka (LINTANG)</h3>
+                <p><em>Chatbot</em> WhatsApp yang memudahkan akses informasi statistik dan angka penting dari BPS
+                  Kabupaten
+                  Bulungan. Layanan ini memungkinkan pengguna mendapatkan data statistik dengan cepat dan mudah melalui
+                  aplikasi WhatsApp.</p>
+                <a href="https://wa.me/6285249646837" class="read-more stretched-link" target="_blank">Dapatkan Layanan
+                  Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-orange position-relative">
+              <!-- <img src="assets/img/buku.png" alt="Logo PST" class="icon"> -->
+              <i class="bi bi-bookshelf icon"></i>
+              <div>
+                <h3>Perpustakaan <em>Offline</em></h3>
+                <p>Perpustakaan fisik BPS Kabupaten Bulungan yang menyediakan berbagai koleksi buku, jurnal, dan
+                  publikasi statistik. Pengunjung dapat mengakses dan meminjam berbagai literatur terkait statistik di
+                  sini.</p>
+                <a href="#" class="read-more stretched-link" onclick="showLibraryDialogs(event)">Dapatkan Layanan Ini
+                  <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <script>
+            function showLibraryDialogs(event) {
+              event.preventDefault(); // Prevent the default link behavior
+
+              Swal.fire({
+                title: 'Apakah Anda pengunjung langsung Pelayanan Statistik Terpadu (PST) BPS Kabupaten Bulungan?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Iya',
+                cancelButtonText: 'Tidak'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: 'Apakah Anda telah mengisi buku tamu PST?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sudah',
+                    cancelButtonText: 'Belum'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      Swal.fire({
+                        title: 'Selamat menikmati layanan Perpustakaan Offline kami!',
+                        icon: 'success'
+                      });
+                    } else {
+                      window.open("https://afn-latsar3ix.github.io/Buku-Tamu-PST-BPS-Kabupaten-Bulungan/", "_blank");
+                    }
+                  });
+                } else {
+                  Swal.fire({
+                    title: 'Silakan datang ke kantor BPS Kabupaten Bulungan untuk mendapatkan layanan ini.',
+                    icon: 'info'
+                  });
+                }
+              });
+            }
+          </script>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item item-red position-relative">
+              <!-- <img src="assets\img\buku.png" alt="Logo PST" class="icon"> -->
+              <i class="bi bi-journal icon"></i>
+              <div>
+                <h3>Perpustakaan <em>Online</em></h3>
+                <p>Layanan perpustakaan digital yang memungkinkan pengguna mengakses berbagai publikasi,
+                  <em>e-book</em>, dan
+                  jurnal statistik secara <em>online</em>. Layanan ini memudahkan pengguna mendapatkan literatur
+                  statistik tanpa
+                  harus datang ke perpustakaan fisik.
+                </p>
+                <a href="https://perpustakaan.bps.go.id/opac/" class="read-more stretched-link" target="_blank">Dapatkan
+                  Layanan Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item item-pink position-relative">
+              <!-- <img src="assets\img\silastik.png" alt="Logo Silastik" class="icon"> -->
+              <i class="bi bi-chat-dots icon"></i>
+              <div>
+                <h3>Konsultasi Statistik <em>Offline</em></h3>
+                <p>Layanan konsultasi tatap muka dengan ahli statistik BPS Kabupaten Bulungan. Pengguna dapat mengajukan
+                  pertanyaan dan mendapatkan bimbingan langsung mengenai berbagai isu dan analisis statistik.</p>
+                <a href="#" class="read-more stretched-link" onclick="showConsultationDialogs(event)">Dapatkan Layanan
+                  Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <script>
+            function showConsultationDialogs(event) {
+              event.preventDefault(); // Prevent the default link behavior
+
+              Swal.fire({
+                title: 'Apakah Anda pengunjung langsung Pelayanan Statistik Terpadu (PST) BPS Kabupaten Bulungan?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Iya',
+                cancelButtonText: 'Tidak'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: 'Apakah Anda telah mengisi buku tamu PST?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sudah',
+                    cancelButtonText: 'Belum'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      Swal.fire({
+                        title: 'Selamat menikmati layanan Konsultasi Statistik Offline kami!',
+                        icon: 'success'
+                      });
+                    } else {
+                      window.open("https://afn-latsar3ix.github.io/Buku-Tamu-PST-BPS-Kabupaten-Bulungan/", "_blank");
+                    }
+                  });
+                } else {
+                  Swal.fire({
+                    title: 'Silakan datang ke kantor BPS Kabupaten Bulungan untuk mendapatkan layanan ini.',
+                    icon: 'info'
+                  });
+                }
+              });
+            }
+          </script>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item item-indigo position-relative">
+              <!-- <img src="assets/img/silastik.png" alt="Logo Silastik" class="icon"> -->
+              <i class="bi bi-chat-dots icon"></i>
+              <div>
+                <h3>Konsultasi Statistik <em>Online</em></h3>
+                <p>Layanan konsultasi statistik yang dilakukan secara <em>online</em> melalui silastik.bps.go.id, Live
+                  Chat
+                  <em>website</em>, atau <em>chat</em> WhatsApp. Layanan ini memudahkan pengguna mendapatkan bantuan
+                  ahli statistik tanpa
+                  harus datang ke kantor BPS Kabupaten Bulungan.
+                </p>
+                <a href="#" class="read-more stretched-link" onclick="showConsultationMediaDialog(event)">Dapatkan
+                  Layanan Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script>
+            function showConsultationMediaDialog(event) {
+              event.preventDefault(); // Prevent the default link behavior
+
+              Swal.fire({
+                title: 'Media apa yang ingin Anda gunakan untuk melakukan Konsultasi Online?',
+                icon: 'question',
+                showCancelButton: true,
+                showDenyButton: true,
+                showConfirmButton: true,
+                confirmButtonText: 'Live Chat Website',
+                denyButtonText: 'Chat WhatsApp',
+                cancelButtonText: 'Portal SILASTIK',
+                customClass: {
+                  confirmButton: 'swal-button-blue',
+                  denyButton: 'swal-button-green',
+                  cancelButton: 'swal-button-orange'
+                }
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.open("https://bulungankab.bps.go.id/", "_blank");
+                } else if (result.isDenied) {
+                  window.open("https://wa.me/6285249646837", "_blank");
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                  window.open("https://silastik.bps.go.id/v3/index.php/site/login/", "_blank");
+                }
+              });
+            }
+          </script>
+
+          <style>
+            .swal-button-blue {
+              background-color: #007bff !important;
+              color: white !important;
+            }
+
+            .swal-button-green {
+              background-color: #28a745 !important;
+              color: white !important;
+            }
+
+            .swal-button-orange {
+              background-color: #fd7e14 !important;
+              color: white !important;
+            }
+          </style>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="service-item item-cyan position-relative">
+              <!-- <img src="assets\img\romantik.png" alt="Logo Romantik" class="icon"> -->
+              <i class="bi bi-star icon"></i>
+              <div>
+                <h3>Rekomendasi Kegiatan Statistik <em>Offline</em></h3>
+                <p>Layanan pengajuan rekomendasi kegiatan statistik secara langsung atau melalui surat ke kantor BPS
+                  setempat. Cocok bagi pengguna yang lebih nyaman dengan proses tatap muka atau memiliki kendala akses
+                  internet.</p>
+                <a href="#" class="read-more stretched-link" onclick="showRomantikDialogs(event)">Dapatkan Layanan
+                  Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <script>
+            function showRomantikDialogs(event) {
+              event.preventDefault(); // Prevent the default link behavior
+
+              Swal.fire({
+                title: 'Apakah Anda pengunjung langsung Pelayanan Statistik Terpadu (PST) BPS Kabupaten Bulungan?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Iya',
+                cancelButtonText: 'Tidak'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: 'Apakah Anda telah mengisi buku tamu PST?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sudah',
+                    cancelButtonText: 'Belum'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      Swal.fire({
+                        title: 'Selamat menikmati layanan Rekomendasi Kegiatan Statistik Offline kami!',
+                        icon: 'success'
+                      });
+                    } else {
+                      window.open("https://afn-latsar3ix.github.io/Buku-Tamu-PST-BPS-Kabupaten-Bulungan/", "_blank");
+                    }
+                  });
+                } else {
+                  Swal.fire({
+                    title: 'Silakan datang ke kantor BPS Kabupaten Bulungan untuk mendapatkan layanan ini.',
+                    icon: 'info'
+                  });
+                }
+              });
+            }
+          </script>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="service-item item-teal position-relative">
+              <!-- <img src="assets\img\romantik.png" alt="Logo Romantik" class="icon"> -->
+              <i class="bi bi-star icon"></i>
+              <div>
+                <h3>Rekomendasi Kegiatan Statistik <em>Online</em></h3>
+                <p>Layanan pengajuan rekomendasi kegiatan statistik secara <em>online</em> melalui <em>web</em>
+                  Romantik. Memudahkan
+                  pengguna untuk mengunggah proposal dan dokumen pendukung serta memantau status permohonan secara
+                  <em>real-time.</em>
+                </p>
+                <a href="https://romantik.web.bps.go.id/" class="read-more stretched-link" target="_blank">Dapatkan
+                  Layanan Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="900">
+            <div class="service-item item-orange position-relative">
+              <i class="bi bi-cart icon"></i>
+              <div>
+                <h3>Penjualan Produk Statistik</h3>
+                <p>Layanan penjualan data mikro dan peta wilayah kerja statistik (wilkerstat) yang disediakan oleh BPS.
+                  Pengguna dapat membeli data-data ini untuk keperluan penelitian, analisis, dan perencanaan.</p>
+                <a href="https://silastik.bps.go.id/v3/index.php/site/login/" class="read-more stretched-link"
+                  target="_blank">Dapatkan Layanan Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="1000">
+            <div class="service-item item-red position-relative">
+              <i class="bi bi-graph-up-arrow icon"></i>
+              <div>
+                <h3>Permintaan Data</h3>
+                <p>Layanan untuk mengajukan permintaan data statistik tertentu yang dibutuhkan oleh pengguna. BPS
+                  Kabupaten Bulungan akan memproses dan menyediakan data sesuai dengan kebutuhan pengguna berdasarkan
+                  ketentuan yang berlaku.</p>
+                <a href="#" class="read-more stretched-link" onclick="showRequestDataDialogs(event)">Dapatkan Layanan
+                  Ini <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <script>
+            function showRequestDataDialogs(event) {
+              event.preventDefault(); // Prevent the default link behavior
+
+              Swal.fire({
+                title: 'Apakah Anda pengunjung langsung Pelayanan Statistik Terpadu (PST) BPS Kabupaten Bulungan?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Iya',
+                cancelButtonText: 'Tidak'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: 'Apakah Anda telah mengisi buku tamu PST?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sudah',
+                    cancelButtonText: 'Belum'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.open("https://script.google.com/macros/s/AKfycbyVopEvYJ6XG7_dwhmX0D_4Gtqn5nwZYdgj6fsXgvU5Car0HfLXZmXQn_9ctZYOuc8/exec", "_blank");
+                    } else {
+                      window.open("https://afn-latsar3ix.github.io/Buku-Tamu-PST-BPS-Kabupaten-Bulungan/", "_blank");
+                    }
+                  });
+                } else {
+                  window.open("https://script.google.com/macros/s/AKfycbyVopEvYJ6XG7_dwhmX0D_4Gtqn5nwZYdgj6fsXgvU5Car0HfLXZmXQn_9ctZYOuc8/exec", "_blank");
+                }
+              });
+            }
+          </script>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section light-background">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>LAYANAN PENGADUAN</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-megaphone"></i></div>
+              <div>
+                <h4 class="title"><a href="https://www.lapor.go.id/" class="stretched-link" target="_blank">SP4N
+                    LAPOR!</a></h4>
+                <p class="description">Layanan Aspirasi dan Pengaduan Online Rakyat, memberikan satu pintu pengaduan
+                  untuk semua jenis masalah pelayanan publik.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-envelope-exclamation"></i></div>
+              <div>
+                <h4 class="title"><a href="https://forms.gle/QaFskFXzRmkES5MRA" class="stretched-link"
+                    target="_blank">Pengaduan BPS Bulungan</a></h4>
+                <p class="description">Layanan untuk menyampaikan pengaduan terkait layanan BPS Kabupaten Bulungan.
+                  Pengguna dapat melaporkan keluhan atau masalah yang dihadapi melalui formulir ini.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-megaphone"></i></div>
+              <div>
+                <h4 class="title"><a href="https://webapps.bps.go.id/pengaduan/wbs/beranda" class="stretched-link"
+                    target="_blank"><em>Whistleblowing System</em> BPS</a></h4>
+                <p class="description">Sistem untuk melaporkan dugaan pelanggaran hukum, peraturan, atau kode etik yang
+                  terjadi di lingkungan BPS. Laporan dapat dilakukan secara anonim.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>MAKLUMAT PELAYANAN</h2>
+        <img src="assets/img/maklumat.png" alt="Maklumat Pelayanan" class="maklumat-img">
+      </div><!-- End Section Title -->
+
+      <div class="container">
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Standar Pelayanan Section -->
+    <section id="testimonials" class="testimonials section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>STANDAR PELAYANAN</h2>
+        <p>Standar Pelayanan PST BPS Kabupaten Bulungan ditetapkan untuk memastikan setiap layanan statistik diberikan
+          dengan kualitas terbaik dan sesuai dengan kebutuhan
+          pengguna.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/Perpustakaan_Offline.png" class="testimonial-img" alt="">
+              </div>
+            </div><!-- End standar pelayanan item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/Perpustakaan_Online.png" class="testimonial-img" alt="">
+              </div>
+            </div><!-- End standar pelayanan item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/Konsultasi_Statistik.png" class="testimonial-img" alt="">
+              </div>
+            </div><!-- End standar pelayanan item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/Rekomendasi_Statistik.png" class="testimonial-img" alt="">
+              </div>
+            </div><!-- End standar pelayanan item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/Penjualan_ProdukStatistik.png" class="testimonial-img" alt="">
+              </div>
+            </div><!-- End standar pelayanan item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/Permintaan_Data.png" class="testimonial-img" alt="">
+              </div>
+            </div><!-- End standar pelayanan item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Standar Pelayanan Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>HUBUNGI KAMI</h2>
+        <p>Jika Anda memiliki pertanyaan atau memerlukan bantuan untuk mendapatkan layanan kami, Anda dapat menghubungi
+          kami melalui kontak di bawah ini.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Alamat</h3>
+              <p>Jl. Kol. H. Soetadji No. 85, Tanjung Selor Hilir</p>
+              <!-- <p>Tanjung Selor, Kab. Bulungan, Kalimantan Utara 77212</p> -->
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="200">
+              <a href="https://wa.me/6285249646837" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-telephone"></i>
+                <h3>Telepon Kami</h3>
+                <p>+62 8524 96468 37</p>
+              </a>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="200">
+              <i class="bi bi-envelope"></i>
+              <h3>Email Kami</h3>
+              <p>bps6502@bps.go.id</p>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <div class="row gy-4 mt-1">
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.9136312132214!2d117.37011457398303!3d2.8412621971354906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3213ce22ae8324c5%3A0x531ff6858abd3806!2sBPS%20Kabupaten%20Bulungan!5e0!3m2!1sid!2sid!4v1721370566854!5m2!1sid!2sid"
+              frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div><!-- End Google Maps -->
+        </div>
+
+        <div class="row gy-4 mt-1">
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="400">
+              <a href="https://www.instagram.com/bpskabbulungan?igsh=NW1nZWZrY3p1M2Ru" target="_blank"
+                rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+                <h3>Instagram</h3>
+                <p>@bpskabbulungan</p>
+              </a>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="400">
+              <a href="https://www.facebook.com/bpsbulungan/?locale=id_ID" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-facebook"></i>
+                <h3>Facebook</h3>
+                <p>facebook.com/bpsbulungan</p>
+              </a>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="400">
+              <a href="https://x.com/bpskabbulungan" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-twitter-x"></i>
+                <h3>Twitter</h3>
+                <p>@bpskabbulungan</p>
+              </a>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="400">
+              <a href="https://www.tiktok.com/@bpskabbulungan?_t=8o8rJ8FYaYL&_r=1" target="_blank"
+                rel="noopener noreferrer">
+                <i class="bi bi-tiktok"></i>
+                <h3>TikTok</h3>
+                <p>@bpskabbulungan</p>
+              </a>
+            </div>
+          </div><!-- End Info Item -->
+        </div><!-- End Info Item -->
+      </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">BPS Kabupaten Bulungan</strong><span>All Rights
+          Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
